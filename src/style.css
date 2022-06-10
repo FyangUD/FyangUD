@@ -2,89 +2,47 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            top: 20px;
-            left: 20px;
-}
-
-#container {
-    position: relative;
-    width: 100%;
-    padding-top: 50.46%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow:visible;
-}
-
-        ul{
-            margin: 0;
-            padding: 0;
-            <!--display: flex;-->
-        }
-        ul li{
-            position: absolute;
-            list-style: none;
-            width: .6vw;
-            height: .6vw;
-            background: #86ff3b;
-            margin: 0 0;
-            border-radius: 50%;
-            transition: 0.5s;
+            z-index: 2;
             cursor: pointer;
-            display: flex;
-            align-items: flex-end;
-        }
-        #aboutMe li:hover{
-            background: #86ff3b;
-            box-shadow: 0 0 0 4px #777, 0 0 0 6px #86ff3b;
-        }
-        #competition li{
-            background: #ffce27;
-        }
-        #competition li:hover{
-            background: #ffce27;
-            box-shadow: 0 0 0 4px #777, 0 0 0 6px #ffce27;
-        }
-        ul li .Content{
-            position: absolute;
-            bottom: 1.5vw;
-            width: 12vw;
-            background: #fff;
-            box-sizing: border-box;
-            padding: .5vw;
-            border-radius: 4px;
-            visibility: hidden;
-            opacity: 0;
-            transition:0.5s;
-            transform: translateX(-50%) translateY(-2vw);
-            word-wrap: break-word;
-            z-index: 1;
-        }
-        ul li:hover .Content{
+}
+
+#logoFilter {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.Btn, .BtnOff {
+  position: relative;
+  font-family: 'STXihei';
+  border: 0px;
+  background-color: transparent;
+  display: flex;
+  left: 0px;
+  top: 0px;
+  width: 100px;
+  height: 20px;
+  flex-direction: column;
+  outline: none;
+  padding: 2px 2px;
+  visibility: hidden;
+  opacity: 0;
+  transition:0.5s;
+  cursor: pointer;
+}
+
+.Btn{   color: white; }
+
+.BtnOff{   color: #acacac;   text-decoration: line-through; }
+
+#logoFilter:hover .Btn, #logoFilter:hover .BtnOff{
             visibility: visible;
             opacity: 1;
-            transform: translateX(-50%) translateY(-.1vw);
-        }
-        ul li .Content:before{
-            content: '';
-            position: absolute;
-            width: 1vw;
-            height: 1vw;
-            background: #fff;
-            bottom: -.5vw;
-            left: 5.5vw;    /*=content width/2 - padding*/
-            transform: rotate(45deg);
-            z-index: 1;
-        }
-        .Content .Headphoto{
-            width: 11vw;  /* =content width - padding*2 */
-            object-fit: cover;
-        }
-        ul li h2{
-            margin: 0;
-            padding: 0;
-            font-size:.5vw;
-        }
-        ul li p{ font-size: .25vw; }
+            top: 120px;
+            z-index: 2;
+}
+
 
