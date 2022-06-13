@@ -22,14 +22,14 @@
   background-color: transparent;
   display: flex;
   left: 0px;
-  top: 0px;
+  top: 100px;
   width: 100px;
   height: 20px;
   flex-direction: column;
   outline: none;
   padding: 2px 2px;
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 1;
   transition:0.5s;
   cursor: pointer;
 }
@@ -38,11 +38,11 @@
 
 .BtnOff{   color: #acacac;   text-decoration: line-through; }
 
-#logoFilter:hover .Btn, #logoFilter:hover .BtnOff{
+/*#logoFilter:hover .Btn, #logoFilter:hover .BtnOff{
             visibility: visible;
             opacity: 1;
             top: 120px;
             z-index: 2;
-}
+}*/
 
 

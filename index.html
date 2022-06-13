@@ -55,28 +55,22 @@
         ul li{
             position: absolute;
             list-style: none;
-            width: .6vw;
-            height: .6vw;
-            background: #86ff3b;
+            width: .4vw;
+            height: .4vw;
+            background: #fffa4b;
             margin: 0 0;
             border-radius: 50%;
             transition: 0.5s;
             cursor: pointer;
             display: flex;
             /*align-items: center; */
-            align-items: flex-end;  
+            align-items: flex-end;
         }
-        #aboutMe li:hover{
-            background: #86ff3b;
-            box-shadow: 0 0 0 4px #777, 0 0 0 6px #86ff3b;
+        ul li:hover{
+            background: #ffab4b;
+            box-shadow: 0 0 0 .2vw #777, 0 0 0 .3vw #ffab4b;
         }
-        #competition li, #professional li{
-            background: #ffce27;
-        }
-        #competition li:hover, #professional li:hover{
-            background: #ffce27;
-            box-shadow: 0 0 0 4px #777, 0 0 0 6px #ffce27;
-        }
+
         ul li .Content{
             position: absolute;
             bottom: 1.5vw;
@@ -85,17 +79,18 @@
             box-sizing: border-box;
             padding: .3vw;
             /*border-radius: .5vw; may not need */
-            visibility: hidden;
+            visibility: hidden; /*can be hidden for start*/
             opacity: 0;
             transition:0.5s;
             transform: translateX(-50%) translateY(-2vw);
             word-wrap: break-word;
-            z-index: 3;
+
         }
         ul li:hover .Content{
             visibility: visible;
             opacity: 1;
             transform: translateX(-50%) translateY(-.1vw);
+            z-index: 3;
         }
         ul li .Content:before{
             content: '';
@@ -116,20 +111,31 @@
         ul li h2{
             margin: 0;
             padding: 0;
-            font-size:1vw;
+            font-size:.6vw;
         }
         ul li p{ font-size: .6vw; }
                     
-        #am1 { left: 39%; top: 47.5%; }
-        #am2 { left: 38.4%; top: 47.5%; }
-        #am3 { left: 38%; top: 45%; }
-        #am4 { left: 68%; top: 44%; }
+        #am1 { left: 39.01%; top: 47.99%; }    /*Changzhou*/
+        #am2 { left: 38.65%; top: 47.3%; }  /*Nanjing*/
+        #am3 { left: 38.2%; top: 46.1%; }   /*Xuzhou*/
+        #am4 { left: 68%; top: 43.8%; }   /*Berkeley*/
 
-        #cp1 { left: 17%; top: 34%; }
+        #cp1 { left: 17%; top: 34.8%; }    /*Chernobyl*/
         #cp2 { left: 27.5%; top: 53.5%; }
-        #cp3 { left: 36.5%; top: 44.5%; }
+        #cp3 { left: 36.5%; top: 45.7%; } /*Zhengzhou*/
 
-        #pf1 { left: 73.5%; top: 47.7%; }
+        #ac1 { left: 37.8%; top: 45.5%; }  /*Xuzhou*/
+        #ac2 { left: 39.32%; top: 47.2%; } /*Changzhou*/
+        #ac3 { left: 67.9%; top: 42.8%; }   /*Petaluma*/
+        #ac4 { left: 37.8%; top: 52.1%; }   /*Dongguan*/
+        #ac5 { left: 9.5%; top: 34.3%; }   /*London*/
+
+        #pf1 { left: 73.9%; top: 47.9%; }   /*Austin*/
+        #pf2 { left: 40.45%; top: 39.85%; }     /*Changchun*/
+        #pf3 { left: 34.8%; top: 51.55%; }    /* Yuxi */
+        #pf4 { left: 36.2%; top: 55.6%; }  /*Quang Ngai*/
+        #pf5 { left: 74.5%; top: 45.5%; }  /* Bentonville */
+        #pf6 { left: 34.6%; top: 44.5%; }  /* Xining */
 
     </style>
 
@@ -138,11 +144,11 @@
         $(document).ready(function() {
             $('#container').click(function(evt) {
                 evt.stopPropagation();
-                $(this).zoomTo({duration:1000, targetsize:1.0});    <!--待改，zoomout后和载入位置有区别-->
+                $(this).zoomTo({duration:500, targetsize:1.0});    <!--待改，zoomout后和载入位置有区别-->
             });
             $('li').click(function(evt) {
                 evt.stopPropagation();
-                $(this).zoomTo({duration:1000, targetsize:0.03});
+                $(this).zoomTo({duration:500, targetsize:0.013});    <!--zoom in level-->
             });
         });
     </script>
@@ -201,12 +207,16 @@
 		<object class="Map" data="../images/Worldmap-01.svg" type="image/svg+xml">
 			<embed class="Map" src="Worldmap-01.svg" type="image/svg+xml">
 		</object>
+        <object class="Map" data="../images/Worldmap Light-01.png" style="opacity:1;" >
+			<embed class="Map" src="Worldmap Light-01.png">
+		</object>
+
         <!--自我介绍组-->
         <ul id="aboutMe">
             <li  id="am1">
                 <div class="Content">
-                    <h2>Hometown</h2>
-                    <p>Changzhou, China</p>
+                    <h2>Hometown: Changzhou, China</h2>
+                    <p>fyang652@gmail.com<br><a href="https://www.linkedin.com/in/fan-yang-013836164/">LinkedIn Profile</a></p>
                 </div>
             </li>
             <li  id="am2">
@@ -231,6 +241,54 @@
                 </div>
             </li>
         </ul>
+
+        
+        <!--工作作品组-->
+        <ul id="professional">
+            <li  id="pf1">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201905 Velocity Crossing/Headphoto.jpg"></img>
+                    <h2>Velocity Crossing</h2>
+                    <p>2019/05-2020/05 Austin, TX</p>
+                </div>
+            </li>
+            <li  id="pf2">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/202104 Changchun/Headphoto.jpg"></img>
+                    <h2>Changchun Middle Mountain Masterplan</h2>
+                    <p>2021/01-2021/04 Changchun, China</p>
+                </div>
+            </li>
+            <li  id="pf3">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/202103 Fuxian Lake/Headphoto.jpg"></img>
+                    <h2>Fuxian Lake Township Visioning Plan</h2>
+                    <p>2020/07-2021/03 Yuxi, China</p>
+                </div>
+            </li>
+            <li  id="pf4">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/202109 Quang Ngai/Headphoto.jpg"></img>
+                    <h2>Quang Ngai Masterplan</h2>
+                    <p>2021/05-2021/09 Quang Ngai, Vietnam</p>
+                </div>
+            </li>
+            <li  id="pf5">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201911 WMHO/Headphoto.jpg"></img>
+                    <h2>Walmart New Headquater Design</h2>
+                    <p>2018/11-2019/11 Bentonville, AR</p>
+                </div>
+            </li>
+            <li  id="pf6">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/202007 Xining/Headphoto.jpg"></img>
+                    <h2>Xining Downtown Urban Design</h2>
+                    <p>2020/04-2020/07 Xining, China</p>
+                </div>
+            </li>
+        </ul>
+
         <!--竞赛作品组-->
         <ul id="competition">
             <li  id="cp1">
@@ -255,19 +313,45 @@
                 </div>
             </li>
         </ul>
+        
         <!--学术作品组-->
-
-        <!--工作作品组-->
-        <ul id="professional">
-            <li  id="pf1">
+        <ul id="academic">
+            <li  id="ac1">
                 <div class="Content">
-                    <img class="Headphoto" src="../images/201905 Velocity Crossing/Headphoto.jpg"></img>
-                    <h2>Velocity Crossing</h2>
-                    <p>2019/05-2020/05 Austin, TX</p>
+                    <img class="Headphoto" src="../images/201706 Xuzhou Industry/Headphoto.jpg"></img>
+                    <h2>Compact-Oriented Spatial Structure Evaluation and Optimization</h2>
+                    <p>2016/08-2017/06 Xuzhou, China</p>
                 </div>
             </li>
-        </ul>
-
+            <li  id="ac2">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201808 Glocalization/Headphoto.jpg"></img>
+                    <h2>Glocalization: Transforming Industrialized Villages</h2>
+                    <p>2017/05-2017/08 Changzhou, China</p>
+                </div>
+            </li>
+            <li  id="ac3">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201712 Petaluma/Headphoto.jpg"></img>
+                    <h2>Petaluma River Regeneration</h2>
+                    <p>2017/08-2017/12 Petaluma, CA</p>
+                </div>
+            </li>
+            <li  id="ac4">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201805 Production City/Headphoto.jpg"></img>
+                    <h2>The City of Massive Production</h2>
+                    <p>2018/03-2018/05</p>
+                </div>
+            </li>
+            <li  id="ac5">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201805 Old Oak/Headphoto.jpg"></img>
+                    <h2>Old Oak Common: London 2030</h2>
+                    <p>2018/03-2018/05</p>
+                </div>
+            </li>
+        </ul>  
     </div>
 
 </body>
