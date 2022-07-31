@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+github<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,38 +8,44 @@
 
     <link rel="stylesheet" href="../src/style.css" type="text/css" media="screen">
 
-    <script src="../src/jquery.min.js.download" type="text/javascript"></script>
-	<script type="text/javascript" src="../src/jquery.zoomooz.min.js.download"></script>
-
     <style>
-        html {background-color: #505050; font-family: 'STXihei';}
+        html {
+            height: 100%;
+            width: 100%;
+            font-family: 'STXihei'; /*'华文细黑'，'Helvetica', 'Arial';*/
+        }
+
         body{
             margin: 0;
             padding: 0;
-            <!--height: 100vh;-->
+            height: 100%;
+            width: 100%;
+            background-color: #505050; 
             overflow: visible;
         }
 
         #container {
-            position: relative;
+            position: absolute;
             width: 100%;
             padding-top: 50.46%;
-            <--top: 0;
-            bottom: 0;-->
+            top: 0;
             left: 0;
-            right: 0;
             overflow:visible;
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index:1;
+            top: 50%;  /* position the top  edge of the element at the middle of the parent */
+            left: 50%; 
+            transform: translate(-50%, -50%);
         }
 
         .Map{
             position: absolute;
             width: 100%;
             height: 100%;
-            <--top: 0;
-            bottom: 0;-->
+            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
             pointer-events: none;
@@ -50,7 +56,6 @@
         ul{
             margin: 0;
             padding: 0;
-            <!--display: flex;-->
         }
         ul li{
             position: absolute;
@@ -63,7 +68,6 @@
             transition: 0.5s;
             cursor: pointer;
             display: flex;
-            /*align-items: center; */
             align-items: flex-end;
         }
         ul li:hover{
@@ -77,21 +81,23 @@
             width: 13vw;
             background: #fff;
             box-sizing: border-box;
-            padding: .3vw;
-            /*border-radius: .5vw; may not need */
+            /*border-radius: .5vw; rounded corner may not need */
             visibility: hidden; /*can be hidden for start*/
             opacity: 0;
             transition:0.5s;
             transform: translateX(-50%) translateY(-2vw);
             word-wrap: break-word;
-
+            text-align: center;
+            cursor: default;
         }
+
         ul li:hover .Content{
             visibility: visible;
             opacity: 1;
             transform: translateX(-50%) translateY(-.1vw);
-            z-index: 3;
+            z-index: 20;
         }
+
         ul li .Content:before{
             content: '';
             position: absolute;
@@ -101,19 +107,67 @@
             bottom: -.5vw;
             left: 6.2vw;    /*=content width/2 - padding*/
             transform: rotate(45deg);
-            z-index: 3;
+            z-index: 20;
         }
-        .Content img{
-            width: 13vw;  /* =content width */
+                
+        .ContentExpand{
+            position: absolute;
+            padding: 1vw;
+            width: 32vw;
+            max-height: 35vh;
+            background: #fff;
+            box-sizing: border-box;
+            transition:0.5s;
+            transform: translateX(-50%) translateY(50%);
+            overflow: auto;
+            z-index:20;
+            word-wrap: break-word;
+            text-align: center;
+            cursor: default;
+        }
+
+        .Headphoto{
+            width: 100%;  /* =content width */
             object-fit: cover;
-            transform: translateX(-.3vw) translateY(-.3vw);
+            /*transform: translateX(-.3vw) translateY(-.3vw);*/
         }
+
         ul li h2{
-            margin: 0;
-            padding: 0;
             font-size:.6vw;
+            padding-left: .3vw;
         }
-        ul li p{ font-size: .6vw; }
+
+        ul li p{ 
+            font-size: .6vw; 
+            padding-left: .3vw;
+        }
+        
+        .ExpandBtn{
+            position: absolute;
+            width: 1.3vw;  
+            height: 1.3vw;
+            top: .3vw;
+            right: .3vw;
+            cursor: pointer;
+            z-index: 30;
+            transition: 0s;
+        }
+
+        .Details {
+            text-align: left;
+        }
+        .Details img{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        ::-webkit-scrollbar {
+            width: .3vw;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0; 
+        }
                     
         #am1 { left: 39.01%; top: 47.99%; }    /*Changzhou*/
         #am2 { left: 38.65%; top: 47.3%; }  /*Nanjing*/
@@ -121,12 +175,13 @@
         #am4 { left: 68%; top: 43.8%; }   /*Berkeley*/
 
         #cp1 { left: 17%; top: 34.8%; }    /*Chernobyl*/
-        #cp2 { left: 27.5%; top: 53.5%; }
+        #cp2 { left: 27.5%; top: 53.5%; }  /*Mumbai*/
         #cp3 { left: 36.5%; top: 45.7%; } /*Zhengzhou*/
+        #cp4 { left: 38.4%; top: 48.2%; }  /*Kunshan*/
 
         #ac1 { left: 37.8%; top: 45.5%; }  /*Xuzhou*/
         #ac2 { left: 39.32%; top: 47.2%; } /*Changzhou*/
-        #ac3 { left: 67.9%; top: 42.8%; }   /*Petaluma*/
+        #ac3 { left: 67.6%; top: 43.1%; }   /*Petaluma*/
         #ac4 { left: 37.8%; top: 52.1%; }   /*Dongguan*/
         #ac5 { left: 9.5%; top: 34.3%; }   /*London*/
 
@@ -136,70 +191,41 @@
         #pf4 { left: 36.2%; top: 55.6%; }  /*Quang Ngai*/
         #pf5 { left: 74.5%; top: 45.5%; }  /* Bentonville */
         #pf6 { left: 34.6%; top: 44.5%; }  /* Xining */
+        #pf7 { left: 19%; top: 59.5%; }  /* Addis Ababa */
 
     </style>
-
-
-	<script type="text/javascript">
-        $(document).ready(function() {
-            $('#container').click(function(evt) {
-                evt.stopPropagation();
-                $(this).zoomTo({duration:500, targetsize:1.0});    <!--待改，zoomout后和载入位置有区别-->
-            });
-            $('li').click(function(evt) {
-                evt.stopPropagation();
-                $(this).zoomTo({duration:500, targetsize:0.013});    <!--zoom in level-->
-            });
-        });
-    </script>
-
 </head>
 
 <body>
+
+    <div class="loadingScreen">
+        <svg width="100%" height="100%" style="position:absolute">
+            <rect width="100%" height="100%" style="fill:rgb(80,80,80);" />
+        </svg>
+        <object data="../images/Portfolio Logo.svg" id="loadingLogo"></object>
+    </div>
+
+    <!--点击进入页面-->
+    <script>
+        var loadingEl=document.getElementsByClassName("loadingScreen");
+        if(loadingEl[0]){
+            //console.log(loadingEl[0]);
+            loadingEl[0].addEventListener("click", function(){
+                loadingEl[0].setAttribute("style","visibility:hidden;opacity: 0;transition:0.5s;");
+            });
+        }
+    </script>
 
     <div id="logoFilter">
         <object data="../images/Portfolio Logo.svg" class="Logo" ></object>
         <!--筛选按钮-->
         <div id="filterBtn">
-            <button class="Btn"> </button>
-            <button class="Btn" onclick="ClickFuntion('aboutMe')">About Me</button>
-            <button class="Btn" onclick="ClickFuntion('competition')">Competition</button>
-            <button class="Btn" onclick="ClickFuntion('professional')">Professional</button>
-            <button class="Btn" onclick="ClickFuntion('academic')">Academic</button>
+            <button class="Btn">About Me</button>
+            <button class="Btn">Competition</button>
+            <button class="Btn">Professional</button>
+            <button class="Btn">Academic</button>
         </div>
     </div>
-
-    <script type="text/javascript">
-
-        <!--更新筛选按钮状态-->
-        var btnContainer = document.getElementById("filterBtn");
-        var btns = btnContainer.getElementsByClassName("Btn");
-        console.log(btns.length);
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function(){
-            console.log(this.classList.contains("BtnOff"));
-            if(this.classList.contains("BtnOff")){
-                this.classList.remove("BtnOff");
-                this.classList.add("Btn");
-            }else{
-                this.classList.remove("Btn");
-                this.classList.add("BtnOff");
-            }
-            console.log(this.classList.contains("BtnOff"));
-          });
-        }
-
-        function ClickFuntion(name){
-            var element = document.getElementById(name);
-            var hidden = element.getAttribute("hidden");
-            if(hidden){
-                element.removeAttribute("hidden");
-            }else{
-                element.setAttribute("hidden", "hidden");
-            }
-        }
-
-    </script>
 
 
     <div id="container">
@@ -211,8 +237,9 @@
 			<embed class="Map" src="Worldmap Light-01.png">
 		</object>
 
+        <div id="projects">
         <!--自我介绍组-->
-        <ul id="aboutMe">
+        <ul id="aboutme">
             <li  id="am1">
                 <div class="Content">
                     <h2>Hometown: Changzhou, China</h2>
@@ -287,6 +314,16 @@
                     <p>2020/04-2020/07 Xining, China</p>
                 </div>
             </li>
+            <li  id="pf7">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/202103 Addis Ababa/Headphoto.jpg"></img>
+                    <h2>La Gare Mixed-Use Development</h2>
+                    <p>2019/09-2021/03 Addis Ababa, Ethiopia</p>
+                    <div class='Details' hidden><p><small>Professional project @Sasaki</small>
+                    <br><br>La Gare mixed-use development is located in central Addis Ababa, containing the historic site of La Gare Railway Station. As one of the largest integrated communities in Ethiopia, La Gare features more than 4,000 residences set in an area of over 360,000 sqm. The regeneration of this urban area will revitalize the city's economy and bring back the life hub in the memory of Addis Ababa citizens.
+                    </p></div>
+                </div>
+            </li>
         </ul>
 
         <!--竞赛作品组-->
@@ -312,6 +349,13 @@
                     <p>2016/04 Zhengzhou, China</p>
                 </div>
             </li>
+            <li  id="cp4">
+                <div class="Content">
+                    <img class="Headphoto" src="../images/201608 Narrator/Headphoto.jpg"></img>
+                    <h2>Narrator on the Fourth Dimension</h2>
+                    <p>2016/08 Kunshan, China</p>
+                </div>
+            </li>
         </ul>
         
         <!--学术作品组-->
@@ -328,6 +372,29 @@
                     <img class="Headphoto" src="../images/201808 Glocalization/Headphoto.jpg"></img>
                     <h2>Glocalization: Transforming Industrialized Villages</h2>
                     <p>2017/05-2017/08 Changzhou, China</p>
+                    <div class='Details' hidden ><p><img width='60%' src='../images/201808 Glocalization/P1.jpg'></img>
+                    <br><br><small>UC Berkely, College of Environmental Design, EnvDes 253 Thesis Study
+                    <br><br>Project Committee<br>Marco Cenzatti, John Ellis, Morten Jensen</small>
+                    <br><br>When looking back at the unparalleled economic development process of China, the Yangtze River Delta Area is one of the places that has gone through the most radical changes on earth in the last decades. </p>
+                    <h2>The Land System and Sunan Model</h2>
+                    <p>The Sunan Model, a unique economic development model, featured as bottom-up industrialization in rural area, contributed to the urbanization and growth here. Yet the rapid development is breaking up the connection of those water towns and villages with their tradition. An erosion of global forces marginalized local assets.
+                    <img width='70%' src='../images/201808 Glocalization/P2.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P3.jpg'></img></p>
+                    <h2>Site Analysis</h2>
+                    <p>This project focuses on the issue of globalization VS localization. It aims at create a glocalization paradigm in the Chinese context through exploring different kinds of strategies and design solutions.
+                    <img width='100%' src='../images/201808 Glocalization/P4.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P5.jpg'></img></p>
+                    <h2>Design Strategies</h2>
+                    <p><img width='100%' src='../images/201808 Glocalization/P6.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P7.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P8.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P9.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P10.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P11.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P12.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P13.jpg'></img>
+                    <img width='100%' src='../images/201808 Glocalization/P14.jpg'></img>
+                    </p></div>
                 </div>
             </li>
             <li  id="ac3">
@@ -342,6 +409,14 @@
                     <img class="Headphoto" src="../images/201805 Production City/Headphoto.jpg"></img>
                     <h2>The City of Massive Production</h2>
                     <p>2018/03-2018/05</p>
+                    <div class='Details' hidden ><p><small>UC Berkely, College of Environmental Design, Arch 229</small>
+                    <br><br>This city is functioning as a world factory, it anonymously produce almost everything in our daily life. The city of massive production extends beyond itself and connects to the world through all kinds of flows. When the production become a fixed procedure, the flow of raw materials and final products can be regarded as fixed as well. The raw materials are collected and transported through conveyer belts to the factories, where they are put on assembly lines and manufactured into products. Then these final products are classified based on their function and sent to warehouses. 
+                    <br><br><img width='50%' src='../images/201805 Production City/P1.jpg'></img>
+                    <br><br>This massive production process is separated from consumers but affects the residents in the city in all kinds of ways. The residents order online and they can get the products distributed to them quickly and conveniently. With the thought of showing their personality by getting commodities like clothes, furniture, flooring, etc., with different styles, they actually get the outcome of massive production and they categorized themselves as well. The massive production turned into a massive classification, in which the characteristics of a city, the identity of a community and the personality of a person is generated. 
+                    <br><br><img width='100%' src='../images/201805 Production City/P2+P3.jpg'></img>
+                    <br><br>The fixed process and repetitive massive production is generated due to its economic advantages, yet is restricting the creativity and originality of craftsmanship, also the expression of identity. It becomes a collection, production, categorization and distribution of identity.
+                    <br><br><img width='100%' src='../images/201805 Production City/P4+P5.jpg'></img>
+                    </p></div>
                 </div>
             </li>
             <li  id="ac5">
@@ -351,8 +426,110 @@
                     <p>2018/03-2018/05</p>
                 </div>
             </li>
-        </ul>  
+        </ul>
+        </div>
     </div>
+
+    <!--载入zoomooz插件-->
+    <script type="text/javascript" src="../src/jquery.min.js.download"></script>
+	<script type="text/javascript" src="../src/jquery.zoomooz.min.js.download"></script>
+
+    <!--设置zoom in zoom out-->
+	<script type="text/javascript">
+        //JQuery
+        $(document).ready(function() {
+            $('#container').click(function(evt) {
+                evt.stopPropagation();
+                $(this).zoomTo({duration:500, targetsize:1.0});
+            });
+            $('li').click(function(evt) {
+                evt.stopPropagation();
+                $(this).zoomTo({duration:500, targetsize:0.013});    //zoom in level
+            });
+        });
+    </script>
+
+    
+    <!--更新筛选按钮状态-->
+    <script type="text/javascript">
+        var btns = document.querySelectorAll('.Btn');
+        //var btns = btnContainer.getElementsByClassName("Btn");
+
+        function ClickFunction(name){
+            var element = document.getElementById(name);
+            var hidden = element.getAttribute("hidden");
+            if(hidden){
+                element.removeAttribute("hidden");
+            }else{
+                element.setAttribute("hidden", "true");
+            }
+        }
+
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            //console.log(this.classList.contains("BtnOff"));
+            if(this.classList.contains("BtnOff")){
+                this.classList.remove("BtnOff");
+                this.classList.add("Btn");
+            }else{
+                this.classList.remove("Btn");
+                this.classList.add("BtnOff");
+            }
+            var name = this.textContent;
+            name = name.toLowerCase();
+            name = name.replace(" ","");
+            ClickFunction(name);
+            //console.log(this.classList.contains("BtnOff"));
+          });
+        }
+        //close about me nodes
+        ClickFunction('aboutme');
+        btns[0].classList.remove("Btn");
+        btns[0].classList.add("BtnOff");
+    </script>
+
+    <!--悬浮窗扩展功能-->
+    <script>
+        var contents = document.getElementsByClassName('Content');
+        for(i=0;i<contents.length;i++){
+            var expBtn = document.createElement('img');
+            expBtn.src = '../images/ExpandBtn.svg';
+
+            var cloBtn = document.createElement('img');
+            cloBtn.src = '../images/CloseBtn.svg';
+
+            expBtn.classList.add('ExpandBtn');
+            cloBtn.classList.add('ExpandBtn');
+            cloBtn.style.visibility = 'hidden';
+
+            contents[i].appendChild(expBtn);
+            contents[i].appendChild(cloBtn);
+
+            expBtn.addEventListener('click', function(){
+                this.parentNode.classList.remove('Content');
+                this.parentNode.classList.add('ContentExpand');
+                this.style.visibility = 'hidden';
+                this.previousElementSibling.removeAttribute('hidden');  //show details div
+                this.nextSibling.style.visibility = 'visible';  //show close button
+            }, false);
+            cloBtn.addEventListener('click', function(){
+                this.parentNode.classList.remove('ContentExpand');
+                this.parentNode.classList.add('Content');
+                this.style.visibility = 'hidden';
+                this.previousSibling.previousElementSibling.setAttribute('hidden', 'true'); //hide details div
+                this.previousSibling.style.visibility = 'visible';  //show expand button
+            }, false);
+
+            //add scroll distance
+            contents[i].addEventListener('scroll', function(e){ScrollPos(e);}, false);
+        }
+
+        function ScrollPos(e){
+            var pos = e.target.scrollTop;
+            var top = 0.3 / 100 * document.documentElement.clientWidth; //change 0.3 based on button top value
+            e.target.lastChild.style.top = top + pos;
+        }
+    </script>
 
 </body>
 </html>

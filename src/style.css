@@ -1,35 +1,45 @@
-.Logo {
+.loadingScreen {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            z-index: 2;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
             cursor: pointer;
+}
+
+.loadingScreen #loadingLogo {
+            width: 20vw;
+            height: 20vw;
+            z-index: 4;
 }
 
 #logoFilter {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100px;
+  top: 2vw;
+  left: 2vw;
+  width: 10vw;
   cursor: pointer;
   z-index: 2;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+
+.Logo {
+  height: 10vw;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .Btn, .BtnOff {
-  position: relative;
   font-family: 'STXihei';
   border: 0px;
   background-color: transparent;
-  display: flex;
-  left: 0px;
-  top: 100px;
-  width: 100px;
-  height: 20px;
   flex-direction: column;
   outline: none;
-  padding: 2px 2px;
-  visibility: visible;
-  opacity: 1;
   transition:0.5s;
   cursor: pointer;
 }
