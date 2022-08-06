@@ -1,4 +1,4 @@
-github<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -28,13 +28,10 @@ github<!DOCTYPE html>
             position: absolute;
             width: 100%;
             padding-top: 50.46%;
-            top: 0;
-            left: 0;
             overflow:visible;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index:1;
             top: 50%;  /* position the top  edge of the element at the middle of the parent */
             left: 50%; 
             transform: translate(-50%, -50%);
@@ -48,6 +45,7 @@ github<!DOCTYPE html>
             bottom: 0;
             left: 0;
             right: 0;
+            z-index: 0;
             pointer-events: none;
             overflow: hidden;
             opacity: .5;
@@ -62,6 +60,8 @@ github<!DOCTYPE html>
             list-style: none;
             width: .4vw;
             height: .4vw;
+            min-width: 3px;               /*necessary to control maximum zoom in level*/
+            min-height: 3px;
             background: #fffa4b;
             margin: 0 0;
             border-radius: 50%;
@@ -89,13 +89,13 @@ github<!DOCTYPE html>
             word-wrap: break-word;
             text-align: center;
             cursor: default;
+            z-index: 20;
         }
 
         ul li:hover .Content{
             visibility: visible;
             opacity: 1;
             transform: translateX(-50%) translateY(-.1vw);
-            z-index: 20;
         }
 
         ul li .Content:before{
@@ -113,8 +113,8 @@ github<!DOCTYPE html>
         .ContentExpand{
             position: absolute;
             padding: 1vw;
-            width: 32vw;
-            max-height: 35vh;
+            width: 35vw;
+            max-height: 46vh;
             background: #fff;
             box-sizing: border-box;
             transition:0.5s;
@@ -124,6 +124,7 @@ github<!DOCTYPE html>
             word-wrap: break-word;
             text-align: center;
             cursor: default;
+            line-height:125%;
         }
 
         .Headphoto{
@@ -192,12 +193,10 @@ github<!DOCTYPE html>
         #pf5 { left: 74.5%; top: 45.5%; }  /* Bentonville */
         #pf6 { left: 34.6%; top: 44.5%; }  /* Xining */
         #pf7 { left: 19%; top: 59.5%; }  /* Addis Ababa */
-
     </style>
 </head>
 
 <body>
-
     <div class="loadingScreen">
         <svg width="100%" height="100%" style="position:absolute">
             <rect width="100%" height="100%" style="fill:rgb(80,80,80);" />
@@ -277,6 +276,14 @@ github<!DOCTYPE html>
                     <img class="Headphoto" src="../images/201905 Velocity Crossing/Headphoto.jpg"></img>
                     <h2>Velocity Crossing</h2>
                     <p>2019/05-2020/05 Austin, TX</p>
+                    <div class = 'Details' hidden>
+                    <p><small>Professional project @Sasaki<br>Team：Martin Zogran, Hernan D. Schlosman, Ethan Lay-Sleeper, Jeffrey Levy, Fan Yang<br><br>Site Location: Austin, TX<br>Design Area: 145 Hectares<br>Program：Mixed-Use<br>GFA：497,000 ㎡</small>
+                    <br><br>A significant mixed-use project in southeast Austin that’s already attracted an international large manufacturer and an H-E-B grocery store is growing in size, scope and land that will be preserved.
+                    <br><br><img width='100%' src='../images/201905 Velocity Crossing/P1.jpg'></img>
+                    <br><br>Inspired by the runways of the airport, Sasaki propose ‘runway parks’ form a major axis within the project. The runway parks are carefully positioned to provide access from the center of the project, directly to the existing open space, aiming to forms unique central space at the intersection, thus establishes a distinctive district identity. 
+                    <br><br>Breaking ground in early 2021 will be a 295-unit apartment complex called Presidium Velocity, followed shortly thereafter by 140,000 square feet of amenity space and creative office – featuring office space designed for incubating small businesses and creative types, restaurants, and health and wellness users.
+                    <br><br><div style='padding-bottom: 56.25%; position: relative'><iframe frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' src="https://player.vimeo.com/video/438196864?&amp;title=0&amp;byline=0&amp;portrait=0"></iframe></div>
+                    </p></div>
                 </div>
             </li>
             <li  id="pf2">
@@ -333,6 +340,21 @@ github<!DOCTYPE html>
                     <img class="Headphoto" src="../images/202011 Chernobyl/Headphoto.jpg"></img>
                     <h2>New Chernobyl: Towards A Clean Future</h2>
                     <p>2020/11 Chernobyl, Ukraine</p>
+                    <div class='Details' hidden><p><small>Introduction Video</small></p>
+                    <div style='padding-bottom: 56.25%; position: relative'><iframe frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' src='https://www.youtube.com/embed/t1rsPclplTc'></iframe></div>
+                    <h2>Step I Exclusion to Inclusion</h2>
+                    <p><img src = '../images/202011 Chernobyl/P1.jpg' width = '100%'></img>
+                    In order to revive the Chernobyl Area, we first look into the change of Exclusion Zone Boundary, the current boundary cover 2,600 sqkm of land, yet a large portion of it is not that severely polluted due to a large span of time has passed.
+                    <br><br>Based on data from Ukrainian Institute of Agricultural Radiology and ARPA Russia-Belarus, a radiation level analysis shows that a large area is lower than 0.24 microSv/h, which equals to 2 mSv annualy. This number equals to average natural background radiation level in UK, thus the Exclusion Zone boundary can be reduced to cover only 1000 sqkm land.
+                    </p><h2>Step II Accessibility</h2>
+                    <p><img src = '../images/202011 Chernobyl/P2.jpg' width = '80%'></img>
+                    Proposing a HSR could significantly improve the accessibility to the site. Phase one Kyiv-Chernihiv HSR is 210km long, can run 250km/h train that connects the two major cities in less than one hour. Five major stops are proposed, with one station located in the former exclusion zone. It only takes 30 min from kyiv to arrive at Chernobyl by train, more people will be attracted to this area. The later phases could extent the rail to connect West Europe and Russia, functioning as a spine.
+                    </p><h2>Step III New Communities</h2>
+                    <p><img src = '../images/202011 Chernobyl/P3.jpg' width = '100%'></img>
+                    We propose to establish a new community next to the Chernobyl HSR Station, as an anchor and exemplary district for the redevelopment of former EZ. The new community, also the HSR station, is only 2.5 km from Chernobyl old town, serving both the new community and technicians in old town area. 
+                    <br><br>The new community consists of several urban clusters that sits in harmony with the nature. Green corridors surrounding each cluster, with leisure programs located in. Each cluster can hold different programs, mixed-use cluster for youth and new comers, residential community for families, health institution for everyone's healthy life in the city.
+                    <br><br><img src = '../images/202011 Chernobyl/P4.jpg' width = '100%'></img>
+                    </p></div>
                 </div>
             </li>
             <li  id="cp2">
@@ -340,13 +362,29 @@ github<!DOCTYPE html>
                     <img class="Headphoto" src="../images/201804 Mumbai/Headphoto.jpg"></img>
                     <h2>A Gentle Trespasser of Koliwada</h2>
                     <p>2018/04 Mumbai, India</p>
+                    <div class = 'Details' hidden><p>When the land of Koliwada is inevitably facing redevelopment, is there a possible way that we can make this ‘trespasser’, the new project, as gentle as possible? We propose three protocols that the original residents may ask the developer to enforce, in order to achieve a balanced solution for both new comers to the site, as well as the original residents there.
+                    <img src="../images/201804 Mumbai/P1.jpg" width = '100%'></img>
+                    <img src="../images/201804 Mumbai/P2.jpg" width = '100%'></img>
+                    </p></div>
                 </div>
             </li>
             <li  id="cp3">
                 <div class="Content">
                     <img class="Headphoto" src="../images/201604 Vertical Farming/Headphoto.jpg"></img>
-                    <h2>Arable Air: Vertical Farming Facility Design</h2>
+                    <h2>耕·云 Arable Air: Vertical Farming Facility Design</h2>
                     <p>2016/04 Zhengzhou, China</p>
+                    <div class='Details' hidden><p><small>Honorable Mention, 2016 Vertical Farming Design Competition<br>Instructor: Deng Yuanyuan<br>Collaborators: Wang Kaisheng, Xu Chenxu, Wang Meng</small>
+                    </p><h2>Design Concept</h2>
+                    <p>The chinese character 耕 (farming), which is formed by 耒 (plow) on the left side and 井 (well) on the right side, has been connected tightly to the earth since its creation. Yet as the land, which the traditional farming pattern is based on, has been gradually taken up by sprawling modern cities, we’d like to explore the new meaning of farming. Vertical farm, which integrates agriculture and urban space, allows farming leaving earth and floating in air, thus creates new possibilities for farming.
+                    <img src="../images/201604 Vertical Farming/P1.jpg" width = '80%'></img>
+                    </p><h2>Form Generation</h2>
+                    <p><img src="../images/201604 Vertical Farming/P2.jpg" width = '80%'></img>
+                    This site locates in HangMei science and technology park in XinZheng, Henan Province. The existing buildings include an 11F office building, a 2F annexes building and ancillary commercial facilities in the field. The field which is adjacent to the ecological landscape axis in the center of the science and technology park has superior landscape condition and landmark potential.The construction of the vertical farm will make exploration and demonstration for the the development of urban agriculture in the city. 
+                    <img src="../images/201604 Vertical Farming/P3.jpg" width = '100%'></img>
+                    <img src="../images/201604 Vertical Farming/P4.jpg" width = '100%'></img>
+                    <img src="../images/201604 Vertical Farming/P5.jpg" width = '100%'></img>
+                    <img src="../images/201604 Vertical Farming/P6.jpg" width = '100%'></img>
+                    </p></div>
                 </div>
             </li>
             <li  id="cp4">
@@ -354,6 +392,44 @@ github<!DOCTYPE html>
                     <img class="Headphoto" src="../images/201608 Narrator/Headphoto.jpg"></img>
                     <h2>Narrator on the Fourth Dimension</h2>
                     <p>2016/08 Kunshan, China</p>
+                    <div class = 'Details' hidden>
+                    <p><small>Design of Gui Youguang Memorial<br>UIA-HYP Cup 2016 Honorable Mention</small></p>
+                    <h2>About the Narrator</h2>
+                    <p><img src = '../images/201608 Narrator/P1.jpg' width = '45%'></img>
+                    Born in Kunshan, Gui Youguang was famous for literary talent in his early years. In Jiajing Year 19 (1540 AD), he passed the Provincial Exam but failed the Imperial Exam in the next year. So he moved to Anting River and started lecturing. Many students were attracted by his reputation. Yet in the following years, he suffered from both repeatedly failing the Imperial Exam and passing away of his loved ones.
+                    <br><br>However, these twists and turns of life inspired him in his creation. His proses have sincere feelings as well as distinctive style, which are widely praised as the representative of “Classical Faction”. Most of his famous essays were included in <em>Collection of Zhengchuan</em>.
+                    </p><h2>Design Concept</h2>
+                    <p><img src = '../images/201608 Narrator/P2.jpg' width = '45%'></img>
+                    Memorial is a kind of narrative to show the life experiences of the commemorated person. This design tries to follow the typical narrative pattern of the narrator to complete a narrative of the narrator’s life.  Visitors of the memorial may follow the life track of the writer through exhibits, as well as learn the narrate pattern of the writer through visit path and architecture space.
+                    <br><br>We take an article of the narrator as an example to analyze his pattern of extracting events from a pool of all accessible events and organizing their sequence, so as to form the regulations of generating spatial forms and visit paths of the memorial. 
+                    </p><h2>Site Analysis</h2>
+                    <p><img src = '../images/201608 Narrator/P3.jpg' width = '45%'></img>
+                    The site of Gui Youguang Memorial is in Zhenchuan Park of Kunshan, which is also Gui’s resting place. The park locates right between a city street and a river. It has a tranquil atmosphere and inherited the history and culture of Kunshan. So it is an ideal site for Gui’s Memorial. 
+                    <br><br>Yet the effect of the park failed to exert well. There are several facilities inside the park that functioned as a memorial of the historical figure but few people may come into the hidden and forgotten area to visit these facilities. Also, the access to waterfront area is not easy due to dense vegetation inside the park and winding paths that block the sight of visitors. 
+                    <img src = '../images/201608 Narrator/P4.jpg' width = '60%'></img>
+                    </p><h2>An Example of Narrative Pattern</h2>
+                    <p><img src = '../images/201608 Narrator/P5.jpg' width = '100%'></img>
+                    <img src = '../images/201608 Narrator/P6.jpg' width = '100%'></img>
+                    <small>Note:<br>[1] The Imperial Examinations were a civil service examination system in Imperial China to select candidates for the state bureaucracy. By passing the Provincial Exam, Candidates  got the chance of taking Imperial Examination in state capital.
+                    <br>[2] Ivory tablet was held by ancient officials when they meeting the emporer.</small>
+                    </p><h2>Narrative Pattern Analysis</h2>
+                    <p><img src = '../images/201608 Narrator/P7.jpg' width = '45%'></img>
+                    By analyzing The Xiangji Studio of Gui Youguang, it turns out that the narrative is not developed from a linear direction along the timeline, instead it is divergent but surrounds several objects: the past states of the objects are described and juxtaposed with current states. By manipulating time, the narrator allows readers to experience compressed and collaged time periods, thus highlighting the emotion. Following this pattern, we try to arrange the content of the memorial.
+                    </p><h2>Extracting Memorial Themes</h2>
+                    <p><img src = '../images/201608 Narrator/P8.jpg' width = '45%'></img>
+                    Based on the Chronicle of Gui Youguang, we put dozens of events that took place in Gui’s lifetime on the timeline and then try to find connections among them. We sort out 5 themes according to the relation of places/objects among those major events: the Hall of Imperial Examination, the loquat tree, the studio, the ivory tablet and the grave. The 5 exhibition halls are shaped according to the space feature of the places or the  scenes that the objects are used. These halls are the basic modules of the memorial.
+                    </p><h2>Form Generation</h2>
+                    <p><img src = '../images/201608 Narrator/P9.jpg' width = '100%'></img>
+                    <p><img src = '../images/201608 Narrator/P10.jpg' width = '100%'></img>
+                    <p><img src = '../images/201608 Narrator/P11.jpg' width = '80%'></img>
+                    After extracting the five objects that linked major events of the writer’s life, the themes of exhibition halls of the memorial are determined. The five exhibition halls are organized into the plan of the memorial with one hall on the ground (due to the grave is defined as immovable cultural relics) and four underground halls. The contents of these exhibition halls demonstrate mutiple aspects of the writer.
+                    <p><img src = '../images/201608 Narrator/P12.jpg' width = '100%'></img>
+                    </p><h2>Path Organization</h2>
+                    <p><img src = '../images/201608 Narrator/P13.jpg' width = '80%'></img>
+                    The visit sequence of each visitor that comes to the memorial is equivalent to his narrative sequence. The sequence shall not be  fixed in response to the  flexibility  of time dimension in narrative. Thus connectors are introduced into the memorial to provide visitors with a possibility of diversive paths. The connectors connect the underground and ground space. So visitors are able to back to the ground as soon as they finish the visit of one exhibition hall and choose their next object.
+                    <br><br>The insertion of connectors diversified the visit paths of the memorial. Visitors are able to determine the visit sequence of the 5 exhibition halls by using these connectors and thus form a narrative sequence of the 5 themes. Underground and on the ground, past and present is juxtaposed so that the memorial has become a narrative carrier which is able to shuttle on the 4th dimension. Each visitor constructs a narrative of the writer when he or she tries to find one’s own visit path.
+                    <br><img src = '../images/201608 Narrator/P14.jpg' width = '100%'></img>
+                    </p></div>
                 </div>
             </li>
         </ul>
@@ -394,6 +470,8 @@ github<!DOCTYPE html>
                     <img width='100%' src='../images/201808 Glocalization/P12.jpg'></img>
                     <img width='100%' src='../images/201808 Glocalization/P13.jpg'></img>
                     <img width='100%' src='../images/201808 Glocalization/P14.jpg'></img>
+                    <br><br><small>Final thesis report with more details can be read here:</small>
+                    <div style='padding-bottom: 56.25%; position: relative'><iframe src="https://drive.google.com/file/d/1a-eRg9cO_USsQw2bg3IWzjxftRxBJzky/preview" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>
                     </p></div>
                 </div>
             </li>
@@ -437,14 +515,17 @@ github<!DOCTYPE html>
     <!--设置zoom in zoom out-->
 	<script type="text/javascript">
         //JQuery
+        var filter = document.getElementById('filterBtn');
         $(document).ready(function() {
             $('#container').click(function(evt) {
                 evt.stopPropagation();
-                $(this).zoomTo({duration:500, targetsize:1.0});
+                $(this).zoomTo({duration:500, targetsize:1.0});      //zoom back to full page 1.0
+                filter.removeAttribute('hidden');            //hide logo and filter
             });
-            $('li').click(function(evt) {
+            $('li').click(function(evt) {                    //zoom when click on li or content
                 evt.stopPropagation();
-                $(this).zoomTo({duration:500, targetsize:0.013});    //zoom in level
+                $(this).zoomTo({duration:500, targetsize:0.013});    //zoom in level 0.013          
+                filter.setAttribute('hidden','true');        //show logo and filter
             });
         });
     </script>
@@ -500,7 +581,7 @@ github<!DOCTYPE html>
 
             expBtn.classList.add('ExpandBtn');
             cloBtn.classList.add('ExpandBtn');
-            cloBtn.style.visibility = 'hidden';
+            cloBtn.setAttribute('hidden','true');
 
             contents[i].appendChild(expBtn);
             contents[i].appendChild(cloBtn);
@@ -508,16 +589,16 @@ github<!DOCTYPE html>
             expBtn.addEventListener('click', function(){
                 this.parentNode.classList.remove('Content');
                 this.parentNode.classList.add('ContentExpand');
-                this.style.visibility = 'hidden';
+                this.setAttribute('hidden','true');
                 this.previousElementSibling.removeAttribute('hidden');  //show details div
-                this.nextSibling.style.visibility = 'visible';  //show close button
+                this.nextSibling.removeAttribute('hidden');  //show close button
             }, false);
             cloBtn.addEventListener('click', function(){
                 this.parentNode.classList.remove('ContentExpand');
                 this.parentNode.classList.add('Content');
-                this.style.visibility = 'hidden';
+                this.setAttribute('hidden','true');
                 this.previousSibling.previousElementSibling.setAttribute('hidden', 'true'); //hide details div
-                this.previousSibling.style.visibility = 'visible';  //show expand button
+                this.previousSibling.removeAttribute('hidden');  //show expand button
             }, false);
 
             //add scroll distance
@@ -526,9 +607,18 @@ github<!DOCTYPE html>
 
         function ScrollPos(e){
             var pos = e.target.scrollTop;
-            var top = 0.3 / 100 * document.documentElement.clientWidth; //change 0.3 based on button top value
-            e.target.lastChild.style.top = top + pos;
+            var startPos = 0.3 / 100 * document.documentElement.clientWidth; //change 0.3 based on button top value
+            e.target.lastChild.style.top = startPos + pos + 'px'; //update close button position to top
         }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P8DD5RBES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3P8DD5RBES');
     </script>
 
 </body>
