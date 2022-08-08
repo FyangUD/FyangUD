@@ -26,10 +26,11 @@
   padding: 0;
   flex-direction: column;
   z-index: 1;
+  line-height: 0;
 }
 
 .Logo {
-  height: 8vw;
+  height: max(8vw, 50px);
   cursor: pointer;
 }
 
@@ -41,6 +42,8 @@
   outline: none;
   cursor: pointer;
   transition: 0.5s;
+  font-size: max(.8vw, 5px);
+  line-height: 1.5vw;
 }
 
 .Btn{   color: white; }
