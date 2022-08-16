@@ -29,7 +29,7 @@
   line-height: 0;
 }
 
-.Logo {
+#logo {
   height: max(8vw, 50px);
   cursor: pointer;
 }
