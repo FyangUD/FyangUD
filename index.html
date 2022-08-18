@@ -12,7 +12,7 @@
         html {
             height: 100%;
             width: 100%;
-            font-family: STXihei, Microsoft Yahei, Helvetica, sans-serif;
+            font-family: STXihei, '华文细黑', 'Microsoft Yahei', '微软雅黑', Helvetica, 'sans-serif';
         }
 
         body{
@@ -172,30 +172,43 @@
             background: #e0e0e0; 
         }
                     
-        #am1 { left: 39.01%; top: 47.99%; }    /*Changzhou*/
+        #am1 { left: 39.01%; top: 47.99%; } /*Changzhou*/
         #am2 { left: 38.65%; top: 47.3%; }  /*Nanjing*/
         #am3 { left: 38.2%; top: 46.1%; }   /*Xuzhou*/
-        #am4 { left: 68%; top: 43.8%; }   /*Berkeley*/
+        #am4 { left: 68%; top: 43.8%; }     /*Berkeley*/
+        #am5 { left: 39.62%; top: 47.99%; } /*Shanghai*/
+        #am6 { left: 38.15%; top: 42.6%; }  /*Beijing*/
+        #am7 { left: 80.15%; top: 39.95%; } /*Boston*/
 
-        #cp1 { left: 17%; top: 34.8%; }    /*Chernobyl*/
-        #cp2 { left: 27.5%; top: 53.5%; }  /*Mumbai*/
-        #cp3 { left: 36.5%; top: 45.7%; } /*Zhengzhou*/
-        #cp4 { left: 38.4%; top: 48.2%; }  /*Kunshan*/
+        #cp1 { left: 17%; top: 34.8%; }     /*Chernobyl*/
+        #cp2 { left: 27.5%; top: 53.5%; }   /*Mumbai*/
+        #cp3 { left: 36.5%; top: 45.7%; }   /*Zhengzhou*/
+        #cp4 { left: 38.4%; top: 48.2%; }   /*Kunshan*/
 
-        #ac1 { left: 37.8%; top: 45.5%; }  /*Xuzhou*/
-        #ac2 { left: 39.32%; top: 47.2%; } /*Changzhou*/
+        #ac1 { left: 37.8%; top: 45.5%; }   /*Xuzhou*/
+        #ac2 { left: 39.32%; top: 47.2%; }  /*Changzhou*/
         #ac3 { left: 67.6%; top: 43.1%; }   /*Petaluma*/
         #ac4 { left: 37.8%; top: 52.1%; }   /*Dongguan*/
-        #ac5 { left: 9.5%; top: 34.3%; }   /*London*/
+        #ac5 { left: 9.5%; top: 34.3%; }    /*London*/
 
         #pf1 { left: 73.9%; top: 47.9%; }   /*Austin*/
-        #pf2 { left: 40.45%; top: 39.85%; }     /*Changchun*/
-        #pf3 { left: 34.8%; top: 51.55%; }    /* Yuxi */
-        #pf4 { left: 36.2%; top: 55.6%; }  /*Quang Ngai*/
-        #pf5 { left: 74.5%; top: 45.5%; }  /* Bentonville */
-        #pf6 { left: 34.6%; top: 44.5%; }  /* Xining */
-        #pf7 { left: 19%; top: 59.5%; }  /* Addis Ababa */
+        #pf2 { left: 40.45%; top: 39.85%; } /*Changchun*/
+        #pf3 { left: 34.8%; top: 51.55%; }  /* Yuxi */
+        #pf4 { left: 36.2%; top: 55.6%; }   /*Quang Ngai*/
+        #pf5 { left: 74.5%; top: 45.5%; }   /* Bentonville */
+        #pf6 { left: 34.6%; top: 44.5%; }   /* Xining */
+        #pf7 { left: 19%; top: 59.5%; }     /* Addis Ababa */
     </style>
+   
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P8DD5RBES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3P8DD5RBES');
+    </script>
+
 </head>
 
 <body>
@@ -221,10 +234,10 @@
         <object data="/images/Portfolio Logo.svg" id="logo" ></object>
         <!--筛选按钮-->
         <div id="filterBtn">
-            <button class="Btn">About Me</button>
+            <button class="Btn">Academic</button>
             <button class="Btn">Competition</button>
             <button class="Btn">Professional</button>
-            <button class="Btn">Academic</button>
+            <button class="Btn">About Me</button>
         </div>
     </div>
 
@@ -244,7 +257,8 @@
             <li  id="am1">
                 <div class="Content">
                     <h2>Hometown: Changzhou, China</h2>
-                    <p>fyang652@gmail.com<br><a href="https://www.linkedin.com/in/fan-yang-013836164/">LinkedIn Profile</a></p>
+                    <div class = 'Details' hidden><p>fyang652@gmail.com<br><a href="https://www.linkedin.com/in/fan-yang-013836164/">LinkedIn Profile</a></p>
+                    </p></div>
                 </div>
             </li>
             <li  id="am2">
@@ -252,13 +266,17 @@
                     <img class="Headphoto" src="/images/SEU.jpg"></img>
                     <h2>Bachelor of Science in Applied Physics</h2>
                     <p>Southeast University<br>2010/09-2014/06</p>
+                    <div class = 'Details' hidden><p>
+                    </p></div>
                 </div>
             </li>
             <li  id="am3">
                 <div class="Content">
                     <img class="Headphoto" src="/images/CUMT.jpg"></img>
                     <h2>Master of Engineering in Urban Planning and Design</h2>
-                    <p>University of Mining and Technology<br>2014/09-2017/06</p>
+                    <p>China University of Mining and Technology<br>2014/09-2017/06</p>
+                    <div class = 'Details' hidden><p>
+                    </p></div>
                 </div>
             </li>
             <li  id="am4">
@@ -266,6 +284,32 @@
                     <img class="Headphoto" src="/images/UCB.jpg"></img>
                     <h2>Master of Urban Design</h2>
                     <p>University of California, Berkeley<br>2017/08-2018/08</p>
+                    <div class = 'Details' hidden><p>
+                    </p></div>
+                </div>
+            </li>
+            <li  id="am5">
+                <div class="Content">
+                    <h2>Assistant Designer Internship</h2>
+                    <p>Dplus Architecture Studio, Shanghai<br>2016/07-2016/09</p>
+                    <div class = 'Details' hidden><p>Deeply involved in the schematic design and design development phases of varies commercial / public projects, including Moganshan SPA Hotel, Suzhou Elementary School, Shanghai Yide Area Urban Design, Xi'an Art City, etc. Role responsibilities include architecture / urban design form research, modelling refinement, analytical diagram production, rendering production.
+                    </p></div>
+                </div>
+            </li>
+            <li  id="am6">
+                <div class="Content">
+                    <h2>Assistant Designer Internship</h2>
+                    <p>China architecture design & research group, Beijing<br>2017/05-2017/07</p>
+                    <div class = 'Details' hidden><p>Worked in Cui Kai Studio under CADG. Took part in the schematic design and design development phase of varies architecture projects with public program, including Weihai Teenager Activity Center, Jinan Metro Headquarter, Hainan Culture Center, etc.
+                    </p></div>
+                </div>
+            </li>
+            <li  id="am7">
+                <div class="Content">
+                    <h2>Urban Designer</h2>
+                    <p>Sasaki Associates, Boston<br>Since 2018/11</p>
+                    <div class = 'Details' hidden><p>
+                    </p></div>
                 </div>
             </li>
         </ul>
@@ -590,7 +634,7 @@
         var btns = document.querySelectorAll('.Btn');
         //var btns = btnContainer.getElementsByClassName("Btn");
 
-        function ClickFunction(name){
+        function SwitchNodes(name){
             var element = document.getElementById(name);
             var hidden = element.getAttribute("hidden");
             if(hidden){
@@ -601,26 +645,54 @@
         }
 
         for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function(){
-            //console.log(this.classList.contains("BtnOff"));
-            if(this.classList.contains("BtnOff")){
-                this.classList.remove("BtnOff");
-                this.classList.add("Btn");
-            }else{
-                this.classList.remove("Btn");
-                this.classList.add("BtnOff");
+            btns[i].addEventListener("click", function(){
+                var name = ProjectID(this);
+                if(this.classList.contains("BtnOff")){         //check if filter is clicked or not
+                    FilterOn(this);                              
+                    if(name === 'aboutme'){                   //if turn on 'about me', hide other projects
+                        for(var j = 0; j<3; j++){
+                            FilterOff(btns[j]);
+                        }
+                    }
+                }else{
+                    FilterOff(this);
+                    if(name === 'aboutme'){                   //if turn off 'about me', show other projects
+                        for(var j = 0; j<3; j++){
+                            FilterOn(btns[j]);
+                        }
+                    }
+                }
+            });
+        }
+        //close about me nodes on loading
+        FilterOff(btns[3]);
+
+        //switch button styles
+        function FilterOff(element){
+            if(element.classList.contains('Btn')){
+                element.classList.remove("Btn");
+                element.classList.add("BtnOff");
+                var id = ProjectID(element);
+                SwitchNodes(id);
             }
-            var name = this.textContent;
+
+        }
+        function FilterOn(element){
+            if(element.classList.contains('BtnOff')){
+                element.classList.remove("BtnOff");
+                element.classList.add("Btn");
+                var id = ProjectID(element);
+                SwitchNodes(id);
+            }
+        }
+
+        //change filter button name to project group id
+        function ProjectID(element){
+            var name = element.textContent;
             name = name.toLowerCase();
             name = name.replace(" ","");
-            ClickFunction(name);
-            //console.log(this.classList.contains("BtnOff"));
-          });
+            return name;
         }
-        //close about me nodes
-        ClickFunction('aboutme');
-        btns[0].classList.remove("Btn");
-        btns[0].classList.add("BtnOff");
     </script>
 
     <!--悬浮窗扩展功能-->
@@ -664,15 +736,6 @@
             var startPos = 0.3 / 100 * document.documentElement.clientWidth; //change 0.3 based on button top value
             e.target.lastChild.style.top = startPos + pos + 'px'; //update close button position to top
         }
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P8DD5RBES"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3P8DD5RBES');
     </script>
 
 </body>
