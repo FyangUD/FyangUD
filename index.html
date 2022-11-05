@@ -9,169 +9,7 @@
     <link rel="stylesheet" href="../src/style.css" type="text/css" media="screen">
 
     <style>
-        html {
-            height: 100%;
-            width: 100%;
-            font-family: STXihei, '华文细黑', 'Microsoft Yahei', '微软雅黑', Helvetica, 'sans-serif';
-        }
-
-        body{
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #505050; 
-            overflow: visible;
-        }
-
-        #container {
-            position: absolute;
-            width: 100%;
-            padding-top: 50.46%;
-            overflow:visible;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: 50%;  /* position the top  edge of the element at the middle of the parent */
-            left: 50%; 
-            transform: translate(-50%, -50%);
-        }
-
-        .Map{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-            opacity: .5;
-        }
-
-        ul{
-            margin: 0;
-            padding: 0;
-        }
-        ul li{
-            position: absolute;
-            list-style: none;
-            width: .4vw;
-            height: .4vw;
-            min-width: 3px;               /*necessary to control maximum zoom in level*/
-            min-height: 3px;
-            background: #fffa4b;
-            margin: 0 0;
-            border-radius: 50%;
-            transition: 0.5s;
-            cursor: pointer;
-            display: flex;
-            align-items: flex-end;
-        }
-        ul li:hover{
-            background: #ffab4b;
-            box-shadow: 0 0 0 .2vw #777, 0 0 0 .3vw #ffab4b;
-        }
-
-        ul li .Content{
-            position: absolute;
-            bottom: 1.5vw;
-            width: 13vw;
-            background: #fff;
-            box-sizing: border-box;
-            /*border-radius: .5vw; rounded corner may not need */
-            visibility: hidden; /*can be hidden for start*/
-            opacity: 0;
-            transition:0.5s;
-            transform: translateX(-50%) translateY(-2vw);
-            word-wrap: break-word;
-            text-align: center;
-            cursor: default;
-            z-index: 20;
-            line-height:0;
-        }
-
-        ul li:hover .Content{
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(-.1vw);
-        }
-
-        ul li .Content:before{
-            content: '';
-            position: absolute;
-            width: 1vw;
-            height: 1vw;
-            background: #fff;
-            bottom: -.5vw;
-            left: 6.2vw;    /*=content width/2 - padding*/
-            transform: rotate(45deg);
-            z-index: 20;
-        }
-                
-        .ContentExpand{
-            position: absolute;
-            padding: 1vw;
-            width: 35vw;
-            max-height: 46vh;
-            background: #fff;
-            box-sizing: border-box;
-            transition:0.5s;
-            transform: translateX(-50%) translateY(50%);
-            overflow: auto;
-            z-index:20;
-            word-wrap: break-word;
-            text-align: center;
-            cursor: default;
-        }
-
-        .Headphoto{
-            width: 100%;  /* =content width */
-            object-fit: cover;
-            /*transform: translateX(-.3vw) translateY(-.3vw);*/
-        }
-
-        ul li h2{
-            font-size:.75vw;
-            padding-left: .3vw;
-            line-height:1.15vw;
-        }
-
-        ul li p{ 
-            font-size: .6vw; 
-            padding-left: .3vw;
-            line-height:1vw;
-        }
-        
-        .ExpandBtn{
-            position: absolute;
-            width: 1.3vw;  
-            height: 1.3vw;
-            top: .3vw;
-            right: .3vw;
-            cursor: pointer;
-            z-index: 30;
-            transition: 0s;
-        }
-
-        .Details {
-            text-align: left;
-        }
-        .Details img{
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-
-        ::-webkit-scrollbar {
-            width: .3vw;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #e0e0e0; 
-        }
-                    
+        /*project locations*/               
         #am1 { left: 39.01%; top: 47.99%; } /*Changzhou*/
         #am2 { left: 38.65%; top: 47.3%; }  /*Nanjing*/
         #am3 { left: 38.2%; top: 46.1%; }   /*Xuzhou*/
@@ -345,10 +183,10 @@
             <li  id="pf3">
                 <div class="Content">
                     <img class="Headphoto" src="/images/202103 Fuxian Lake/Headphoto.jpg"></img>
-                    <h2>Fuxian Lake Township Visioning Plan</h2>
-                    <p>2020/07-2021/03 Yuxi, China</p>
+                    <h2>Lake Township Visioning Plan</h2>
+                    <p>2020/07-2021/03 Southwest China</p>
                     <div class = 'Details' hidden><p><small>Professional project @Sasaki<br>Team：Michael Grove, Ming-Jen Hsueh, Sejal Agrawal, Fan Yang, Shih-Hao Liao, Yixin Miao, Elangovan Govindan, Ponnapa Prakkamakul, Zixuan Tai, Boxiang Yu<br><br>Design Area: 1210,000 ㎡<br>Program：Tourism / Commercial / Residence<br>GFA：840,000 ㎡</small>
-                    <br><br>Fuxian Lake is a deep-water freshwater lake with largest water storage capacity, top water quality among the inland lakes in China. Our plan  prioritizes ecology by minimizing or eliminating the impact on lake water quality while utilizing the lake view. 
+                    <br><br>This Lake is a deep-water freshwater lake with largest water storage capacity, top water quality among the inland lakes in China. Our plan  prioritizes ecology by minimizing or eliminating the impact on lake water quality while utilizing the lake view. 
                     <br><br>We kept most of the existing ravines as primary ecological corridors connecting the district from the mountains to the lakefront, also a linear lakefront wetland belt to collect and purify surface runoff coming from the ravines. A commercial - cultural corridor is placed in the center of the site, where theater, conference hall, forest retail street is located. On the lake front we have resort hotel and resort villas, as well as exhibition and water sports center, on mountainside we put smaller scale hotels closer to the forest, along with market oriented apartments and townhouses.
                     </p></div>
                 </div>
@@ -361,6 +199,22 @@
                     <div class='Details' hidden><p><small>Professional project @Sasaki<br>Team：Romil Sheth, Elangovan Govindan, Fan Yang, Yixin Miao, Qiuying Sun, Ponnapa Prakkamakul, Hui Wang, Andrew Sell, Rafael Marengoni<br><br>Masterplan Area: 155 k㎡<br>Program：Resrot / Residential / Office / Industry<br>GFA: 85,000,000 ㎡</small>
                     <br><br>Quang Ngai is one of the fastest developping cities in Vietnam, the city is proposing a new town to the north of the old city. By utilizing its approximity to harbor and railways, the new town will attract new industries as well as tourists to this area. 
                     <br><br>The plan prioritizes ecology analysis, the open space structure is set based on preserving major portion of existing forests and farmland. The development clusters consists of one main beachfront city belt which will accommodate CBD, retail, resort, and three other clusters providing ecology living, education and research, light industry and high-end manufacturing industry.
+                    </p><h2>Massing Generation Using Grasshopper</h2>
+                    <p>Due to the large site area that require general massing modelling to show density and typology distribution, a Rhino Grasshopper plug-in called <a href = 'https://decodingspaces.de/'>Decoding Spaces</a> was introduced into this project in order to improve work flow and efficiency.
+                    <br><br>This plug-in provides various tools to control the shape of blocks and form of buildings. By taking an area boundary and a guiding street segment as input, a minor street network and blocks can be generated. Other parameters can be used to control the block width, setbacks, parcel width, building type, building width, FAR, etc. 
+                    </p><img width='100%' src='/images/202109 Quang Ngai/plugin.png'>
+                    <div class = 'caption'>Using Decoding Spaces in grasshopper</div>
+                    <img width='60%' src='/images/202109 Quang Ngai/form0.jpg'>
+                    <div class = 'caption'>Input geometry: area boundary and guiding street segment</div>
+                    <img width='60%' src='/images/202109 Quang Ngai/form1.jpg'>
+                    <div class = 'caption'>Single family house typology</div>
+                    <img width='60%' src='/images/202109 Quang Ngai/form2.jpg'>
+                    <div class = 'caption'>'Donut' typology</div>
+                    <img width='60%' src='/images/202109 Quang Ngai/form3.jpg'>
+                    <div class = 'caption'>Tower typology</div>
+                    <img width='60%' src='/images/202109 Quang Ngai/form4.jpg'>
+                    <div class = 'caption'>Vietnamese shophouse typology</div>
+                    <p>Combining the characters provided by this plug-in, a specific typology was developped for this project, as shown in the last picture above. The Vietnamese shophouse typology usually consists of two rows of townhouses with diverse width / height and first floor shops in a block, it was simulated in grasshopper by adjusting parcel and building parameters, as well as introducing a randomrized floor number module.
                     </p></div>
                 </div>
             </li>
@@ -504,7 +358,11 @@
                     <h2>Compact-Oriented Spatial Structure Evaluation and Optimization</h2>
                     <p>2016/08-2017/06 Xuzhou, China</p>
                     <div class='Details' hidden ><p><small>Graduate Thesis, Master of Engineering in Urban Planning and Design<br>China University of Mining and Technology</small>
-                    <br><br>With the growing shortage of available land resources in China, compact-oriented development guided by the renewal of stock land in old industrial area is an inevitable choice to achieve sustainable development. Based on the comparison of existing urban spatial compactness evaluation methods, this paper constructs the evaluation system of spatial structure compactness of old industrial area with the specific requirements of the old industrial area renewal considered. The evaluation system selects several indicators from different levels to describe the spatial structure characteristics of the old industrial area and aims at optimizing its structure.
+                    <br><br>With the growing shortage of available land resources in China, compact-oriented development guided by the renewal of stock land in old industrial area is an inevitable choice to achieve sustainable development. Based on the comparison of existing urban spatial compactness evaluation methods, this paper constructs the evaluation system of spatial structure compactness of old industrial area with the specific requirements of the old industrial area renewal considered. 
+                    <br><br>The evaluation system selects several indicators from different levels to describe the spatial structure characteristics of the old industrial area and aims at optimizing its structure. The 90.8 sqkm research area is divided into 492 cells, each one has a size of 500x500m. 5 types of indexes are selected to describe the density, landuse, transportation of each cell. Datas are collected for each cell and calculated into the compactness index, as shown in the diagram below:
+                    </p><div style='padding-bottom: 56.25%; position: relative'><iframe src="/images/201706 Xuzhou Industry/Compactness Data.html" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>
+                    <p>Then a neighborhood analysis is performed to identify those cells with most potential for redevelopment, as shown in the diagram below. Thus this thesis explores a way to describe and analysis the compactness character of urban blocks, as well as filtering blocks with great potential for the reference of urban redevelopment decisions.
+                    <br><br><img width='100%' src="/images/201706 Xuzhou Industry/potential.jpg">
                     <br><br><small>Full thesis report (in Chinese):</small>
                     <div style='padding-bottom: 56.25%; position: relative'><iframe src="https://drive.google.com/file/d/19DXgffe6ukx1mt7-eWFMSf5RksAXk11_/preview" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>
                 </p></div>
