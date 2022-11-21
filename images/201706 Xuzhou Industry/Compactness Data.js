@@ -24,7 +24,7 @@ let color = d3
 
 d3.json("Compactness Index.json").then(function(d) {
     data = d.features
-    console.log(data);
+    //console.log(data);
 
     /*generate scales*/
     minX = d3.min(data, (item) => item.geometry.rings[0][0][0])

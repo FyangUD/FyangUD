@@ -66,6 +66,13 @@
                 loadingEl[0].setAttribute("style","visibility:hidden;opacity: 0;transition:0.5s;");
             });
         }
+        var timer;
+        timer=setTimeout(function () {
+            loadingEl[0].setAttribute("style","visibility:hidden;opacity: 0;transition:0.5s;");
+        }, 3000);            //3s后自动进入页面
+        function stop(){
+            clearTimeout(timer);
+        }
     </script>
 
     <div id="logoFilter">
@@ -359,12 +366,20 @@
                     <p>2016/08-2017/06 Xuzhou, China</p>
                     <div class='Details' hidden ><p><small>Graduate Thesis, Master of Engineering in Urban Planning and Design<br>China University of Mining and Technology</small>
                     <br><br>With the growing shortage of available land resources in China, compact-oriented development guided by the renewal of stock land in old industrial area is an inevitable choice to achieve sustainable development. Based on the comparison of existing urban spatial compactness evaluation methods, this paper constructs the evaluation system of spatial structure compactness of old industrial area with the specific requirements of the old industrial area renewal considered. 
-                    <br><br>The evaluation system selects several indicators from different levels to describe the spatial structure characteristics of the old industrial area and aims at optimizing its structure. The 90.8 sqkm research area is divided into 492 cells, each one has a size of 500x500m. 5 types of indexes are selected to describe the density, landuse, transportation of each cell. Datas are collected for each cell and calculated into the compactness index, as shown in the diagram below:
+                    <br><br><img width='80%' src="/images/201706 Xuzhou Industry/research area.jpg">
+                    <img width='80%' src="/images/201706 Xuzhou Industry/index table.jpg">
+                    <br><br>The evaluation system selects several indicators from different levels to describe the spatial structure characteristics of the old industrial area and aims at optimizing its structure. The 90.8 sqkm research area is divided into 492 cells, each one has a size of 500x500m. 5 types of indexes in 3 categories are selected to describe the density, landuse, transportation of each cell. Datas are collected for each cell and calculated into the compactness index, as shown in the diagram below:
+                    <br><br><img width='80%' src="/images/201706 Xuzhou Industry/compactness index.jpg">
+                    <br><br>By using the coefficient of variation method, a comprehensive compactness index is calculated for each of the cells and is visualized in the interactive map below:
                     </p><div style='padding-bottom: 56.25%; position: relative'><iframe src="/images/201706 Xuzhou Industry/Compactness Data.html" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>
-                    <p>Then a neighborhood analysis is performed to identify those cells with most potential for redevelopment, as shown in the diagram below. Thus this thesis explores a way to describe and analysis the compactness character of urban blocks, as well as filtering blocks with great potential for the reference of urban redevelopment decisions.
+                    <img width='80%' src="/images/201706 Xuzhou Industry/histogram.jpg">
+                    <p>Based on historical information, compactness in 1995 and 2005 is also calculated. The numerical distribution histogram of compactness in the study area in different years is shown on the diagram above. This thesis also looked into how the indexes in different categories is affecting the compactness, estimated slope and correlations of the indexes is shown below.
+                    <br><br><img width='80%' src="/images/201706 Xuzhou Industry/correlation.jpg">
+                    Then a neighborhood analysis is performed to identify those cells with most potential for redevelopment, as shown in the diagram below. Thus this thesis explores a way to describe and analysis the compactness character of urban blocks, as well as filtering blocks with great potential for the reference of urban redevelopment decisions.
+                    <img width='60%' src="/images/201706 Xuzhou Industry/neighborhood.jpg">
                     <br><br><img width='100%' src="/images/201706 Xuzhou Industry/potential.jpg">
-                    <br><br><small>Full thesis report (in Chinese):</small>
-                    <div style='padding-bottom: 56.25%; position: relative'><iframe src="https://drive.google.com/file/d/19DXgffe6ukx1mt7-eWFMSf5RksAXk11_/preview" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>
+                    <!--<br><br><small>Full thesis report (in Chinese):</small>
+                    <div style='padding-bottom: 56.25%; position: relative'><iframe src="https://drive.google.com/file/d/19DXgffe6ukx1mt7-eWFMSf5RksAXk11_/preview" frameborder = '0' style = 'position: absolute; width: 100%; height: 100%' allow="autoplay"></iframe></div>-->
                 </p></div>
             </li>
             <li  id="ac2">
