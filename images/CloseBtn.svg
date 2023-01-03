@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#E0E0E0;}
-	.st1{fill:#505050;}
-</style>
-<circle class="st0" cx="50" cy="50" r="50"/>
-<rect x="9.7" y="48.9" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 49.9747 121.1188)" class="st1" width="80.8" height="2.6"/>
-<rect x="9.4" y="48.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -20.7431 50.0266)" class="st1" width="81.2" height="2.6"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><style>.a{fill:#b5b5b5;}.b{fill:#fff;}</style></defs><circle class="a" cx="50.04" cy="50.04" r="49.96"/><rect class="b" x="9.69" y="48.9" width="80.77" height="2.62" transform="translate(49.97 121.12) rotate(-135)"/><rect class="b" x="9.4" y="48.74" width="81.23" height="2.62" transform="translate(-20.74 50.03) rotate(-45)"/></svg>

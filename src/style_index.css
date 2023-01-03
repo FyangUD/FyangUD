@@ -1,0 +1,392 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-image: url(/images/Gradient\ Background.jpg);
+    background-size: 100% 100%;
+}
+
+.container {
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.pages {
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    width: 200%;
+    height:100vh;
+    box-sizing: border-box;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s;
+}
+
+.wrapper{
+    position: absolute;
+    width: clamp(650px, 100vw, 177.78vh);
+    height:clamp(365.63px, 56.25vw, 100vh);
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper object{
+    position:absolute;
+}
+
+.wrapper h2 {
+    position:absolute;
+    color: white;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.title{
+    z-index:2;
+    cursor: pointer;
+    position:absolute;
+    font-size: 1vw;
+    top:25%;
+    left:25%;
+    color: white;
+}
+
+.title_right {
+    top: 0%;
+    left: 28%;
+}
+
+.section_hover {
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+}
+
+.section_hover h2{
+    text-align: center;
+    font-size:1vw;
+    /*font-size: clamp(1px, 0.5vw, 20px);*/
+}
+
+#hover_1{
+    left: 31.90%;
+    top: 37.50%;
+    width: 9.20%;
+    padding-top: 8.40%; 
+}
+
+#hover_1 h2{
+    top:20.00%;
+}
+
+#hover_2{
+    left: 45.00%;
+    top: 46.70%;
+    width: 6.00%;
+    padding-top: 6.30%; 
+}
+
+#hover_2 h2{
+    text-align: right;
+    top:0%;
+    right:53%;
+    margin-top: 0;
+}
+
+#hover_3{
+    left: 58.30%;
+    top: 45.40%;
+    width: 4.40%;
+    padding-top: 5.90%; 
+}
+
+#hover_3 h2{
+    top:-25%;
+    left:-10%;
+}
+
+#hover_4{
+    left: 63.40%;
+    top: 48.40%;
+    width: 5.85%;
+    padding-top: 3.10%; 
+}
+
+#hover_4 h2{
+    top:11.00%;
+    margin-top: 0;
+}
+
+#hover_5 {
+    cursor: default;
+    left: 33.20%;
+    top: 57.00%;
+    width: 5.00%;
+    padding-top: 2.10%; 
+}
+
+
+/*sub pages layout*/
+
+.left_navi {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+}
+
+.middle_content {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    background-color: rgba(86, 56, 26, 0);
+}
+
+.right_svg {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background-color: rgba(140, 62, 62, 0);
+}
+
+.items{
+    overflow-y: overlay;
+    display: flex;
+    width: 90%;
+    height: 88%;
+    margin: 4% 2%;
+    padding: 2% 3%;
+    flex-flow: wrap;
+    gap: 4%;
+}
+
+.content {
+    position: relative;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 1s;
+}
+
+
+.content h2, .content p, .content a {
+    position: relative;
+    font-size: 1.2vw;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 2vw;
+}
+
+.content p {
+    font-size: 0.7vw;
+    line-height: 1.2vw;
+}
+
+.wrapper a, .wrapper a:hover, .wrapper a:active, .wrapper a:visited, .wrapper a:focus {
+    text-decoration:none;
+}
+
+#physical_space .content, #virtual_space .content {
+    background-size: cover; /* <-- background size */
+    background-position: center; /* <-- background position */
+}
+
+/*#physical_space .content::before, #virtual_space .content::before {    
+    content: "";
+    position: absolute;
+    background-color: rgba(52, 117, 111, 0.5);
+    width: 100%;
+    height: 100%;
+}*/
+
+.Headphoto{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter:brightness(70%);
+}
+
+#physical_space .content:hover {
+    box-shadow: 0 0 20px rgb(255, 202, 138);
+}
+
+#contact .content:hover {
+    box-shadow: 0 0 15px rgb(145, 215, 226);
+}
+
+#virtual_space .content:hover {
+    box-shadow: 0 0 20px rgb(159, 233, 255);
+}
+
+.back {
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    width: 90%;
+    height: 8.7%;
+    top:6%;
+    left:5%;
+    background-color: rgba(140, 62, 62, 0);
+}
+
+.back_sign {
+    pointer-events: none;
+    left: 0%;
+    top: 15%;
+    width: 20%;
+}
+
+.right_svg object {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.right_wrapper {
+    z-index: 2;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    height: 30%;
+}
+
+.right_svg .change {
+    opacity: 0;
+}
+
+#cv {
+    overflow: hidden;
+}
+
+#cv .content{
+    width: 100%;
+    height:100%;
+}
+
+#cv iframe{
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+}
+
+#cellphone, #screen_right {
+    transition: opacity, 1s;
+}
+
+/*Scroll Bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white ; 
+    background-clip: padding-box;
+}
+
+
+/*Content Expand*/
+.ContentExpand{
+    overflow-y:auto;
+    overflow-x:hidden;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 100%;
+    height: 95%;
+    background-image: none;
+    background-color: white;
+    padding: 2%;
+}
+
+.extensible {
+    transition:0.5s;
+}
+
+.ContentExpand .Headphoto{
+    position: relative;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    filter: brightness(100%);
+}
+
+.ContentExpand h2, .ContentExpand h3, .ContentExpand p{
+    position: relative;
+    color: rgb(58, 58, 58);
+    text-align: center;
+    line-height: 3vw;
+    margin:max(1vw, 1vh) 0;
+}
+
+.ContentExpand p {
+    text-align: left;
+    line-height: 1.5vw;
+}
+
+.ExpandBtn{
+    position: absolute;
+    width: 1.5vw;
+    height: 1.5vw;
+    top: .3vw;
+    right: .3vw;
+    cursor: pointer;
+    z-index: 30;
+    transition: 0s;
+}
+  
+.Details {
+    text-align: left;
+}
+.Details img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+  
+.ContentExpand::-webkit-scrollbar {
+    width: 4px;
+}
+.ContentExpand::-webkit-scrollbar-thumb {
+    /*border-right: 4px white solid; offset from right*/ 
+    background: rgb(123, 123, 123) ; 
+    background-clip: padding-box;
+}
+  
+.caption {
+    font-size: .4vw;
+    color: gray;
+}

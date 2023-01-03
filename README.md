@@ -2,6 +2,8 @@
 
 ### Please check [my portfolio website](https://fyangud.github.io).
 
+### This portfolio displays my design projects in both physical and virtual world, hope you'll enjoy!
+
 <!--
 **fyangud/fyangud** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
