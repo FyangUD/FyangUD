@@ -2,6 +2,11 @@ $(document).ready(function() {
     const pages = $(".page");
     const pages_hide = $(".hide");
 
+    pages_hide.each(function(){
+        $(this).hide();
+    });
+
+
     const hovers = $(".section_hover");
     const backs = $(".back");
     
@@ -11,14 +16,15 @@ $(document).ready(function() {
     function slide(page, direction){
         if(direction === "right"){
             translate -= translateAmount;
-            page.css("visibility", "visible");
+            page.show();
             pages.css("transform", "translateX("+translate+"%)");
         }
         if(direction === "home"){
             translate += translateAmount;
+            console.log(1);
             pages.css("transform", "translateX("+translate+"%)");
             setTimeout(function (){
-                page.css("visibility", "hidden");         
+                page.hide();       
             }, 1000);
         }
     }
@@ -29,7 +35,6 @@ $(document).ready(function() {
                 slide(pages_hide.eq(index), "right");
             });            
         }
-
     });
 
     backs.each(function(index) {

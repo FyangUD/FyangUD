@@ -1,6 +1,12 @@
 $(document).ready(function() {
-    var contents = document.getElementsByClassName('extensible');
+    const contents = document.getElementsByClassName("extensible");
+    const contents_jquery = $(".extensible");
+
+    const filters = $(".filter");
+
     for(i=0;i<contents.length;i++){
+
+        //Add expand and close button
         var expBtn = document.createElement('img');
         expBtn.src = '/images/ExpandBtn.svg';
 
@@ -8,42 +14,77 @@ $(document).ready(function() {
         cloBtn.src = '/images/CloseBtn.svg';
 
         expBtn.classList.add('ExpandBtn');
-        expBtn.setAttribute('hidden','true');
+        hover_div = contents[i].querySelector(".hover_title");
+        hover_div.style.opacity = "0";
+        hover_div.appendChild(expBtn);
+
         cloBtn.classList.add('ExpandBtn');
         cloBtn.setAttribute('hidden','true');
-
-        contents[i].appendChild(expBtn);
         contents[i].appendChild(cloBtn);
 
         //show expand button when hover on content grid
         contents[i].addEventListener('mouseover', function(){
-            this.lastChild.previousSibling.removeAttribute('hidden');
+            if(this.classList.contains("content")){
+                 this.querySelector(".hover_title").style.opacity = "1";
+                 this.firstElementChild.classList.add("transparent");
+            }
         });
-        //show expand button when hover on content grid
+        //hide expand button when leave content grid
         contents[i].addEventListener('mouseout', function(){
-            this.lastChild.previousSibling.setAttribute('hidden','true');
+            if(this.classList.contains("content")){
+                this.querySelector(".hover_title").style.opacity = "0";
+                this.firstElementChild.classList.remove("transparent");
+            }
         });
 
-        expBtn.addEventListener('click', function(){
+        //skip those grids that link to other webpage
+        if(contents[i].classList.contains("outside_link")){
+            hover_div.lastChild.setAttribute('hidden','true');
+            continue;
+        }
+
+        //click to expand grid
+        hover_div.addEventListener('click', function(){
             this.parentNode.classList.add('ContentExpand');
             this.parentNode.classList.remove('content');
             
-            this.setAttribute('hidden','true');
-            this.previousElementSibling.removeAttribute('hidden');  //show details div
-            this.nextSibling.removeAttribute('hidden');  //show close button
+            this.setAttribute('hidden','true'); //hide click expand div
+            this.parentNode.lastChild.previousElementSibling.removeAttribute('hidden');  //show details div
+            this.parentNode.lastChild.removeAttribute('hidden');  //show close button
 
             ToggleVisibility(this.parentNode);
+            filters.hide();
         }, false);
+
+        /*issue: after expand, click h2 other content grids would show up and mess the layout
+        //find all items that can click to expand and add click event
+        click_items = contents[i].querySelectorAll('.click_expand');
+
+        //add click to expand function
+        for(j=0; j<click_items.length; j++){
+            click_items[j].addEventListener('click', function(){
+                this.parentNode.classList.add('ContentExpand');
+                this.parentNode.classList.remove('content');
+                
+                this.parentNode.lastChild.previousSibling.setAttribute('hidden','true'); //hide expand button
+                this.parentNode.lastChild.previousSibling.previousElementSibling.removeAttribute('hidden');  //show details div
+                this.parentNode.lastChild.removeAttribute('hidden');  //show close button
+    
+                ToggleVisibility(this.parentNode);
+            }, false);
+        }*/
+
+        //add close button click function
         cloBtn.addEventListener('click', function(){
             this.parentNode.classList.add('content');
             this.parentNode.classList.remove('ContentExpand');
             
-            this.setAttribute('hidden','true');
-            this.previousSibling.previousElementSibling.setAttribute('hidden', 'true'); //hide details div
-            this.previousSibling.removeAttribute('hidden');  //show expand button
+            this.setAttribute('hidden','true'); //hide close button
+            this.previousElementSibling.setAttribute('hidden', 'true'); //hide details div
+            this.previousElementSibling.previousElementSibling.removeAttribute('hidden');  //show expand button
 
             ToggleVisibility(this.parentNode);
-
+            filters.show();
         }, false);
 
         //add scroll distance
@@ -55,9 +96,10 @@ $(document).ready(function() {
             if(contents[j] == item){
                 continue;
             }
-            contents[j].style.display == ''?
-                contents[j].style.display = 'none' :
-                contents[j].style.display = '';
+  
+            if(!contents[j].classList.contains("filter_hide")){
+                contents_jquery.eq(j).toggle();
+            }
         }
     }
 
