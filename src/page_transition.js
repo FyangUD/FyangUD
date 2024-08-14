@@ -21,7 +21,7 @@ $(document).ready(function() {
         }
         if(direction === "home"){
             translate += translateAmount;
-            console.log(1);
+            //console.log(1);
             pages.css("transform", "translateX("+translate+"%)");
             setTimeout(function (){
                 page.hide();       
@@ -39,7 +39,15 @@ $(document).ready(function() {
 
     backs.each(function(index) {
         $(this).click( () => {
-            slide(pages_hide.eq(index), "home");
+            //check if any expanded content, close it before return to home page
+            var expanded = $(".ContentExpand");
+            if (expanded.length > 0){
+                expanded[0].lastChild.click();
+                var mouseOutEvent = new MouseEvent('mouseout');
+                expanded[0].dispatchEvent(mouseOutEvent);
+            }
+            // slide back home
+            slide(pages_hide.eq(index), "home");            
         });
     });
 
